@@ -12,6 +12,7 @@
  */
 
 #include "util/ts_queue.hpp"
+#include "util/json_exporter.hpp"
 #include "analyzer.hpp"
 #include <unordered_set>
 #include <mutex>
@@ -21,6 +22,7 @@ class ActionExecutor {
     std::atomic<bool> running_{false};
     std::unordered_set<std::string> blocked_ips_;
     std::mutex blocked_mutex_;
+	JsonExporter json_exporter_;
 
 public:
     explicit ActionExecutor(ThreadSafeQueue<ActionEvent>& queue);

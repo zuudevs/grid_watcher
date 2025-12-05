@@ -56,7 +56,7 @@ build CMakeFiles\grid_watcher.dir\src\main.cpp.obj: CXX_COMPILER__grid_watcher_u
   OBJECT_DIR = CMakeFiles\grid_watcher.dir
   OBJECT_FILE_DIR = CMakeFiles\grid_watcher.dir\src
   TARGET_COMPILE_PDB = CMakeFiles\grid_watcher.dir\
-  TARGET_PDB = grid_watcher.pdb
+  TARGET_PDB = D:\Project\grid_watcher\bin\grid_watcher.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\grid_watcher.dir
 
 build CMakeFiles\grid_watcher.dir\src\sniffer.cpp.obj: CXX_COMPILER__grid_watcher_unscanned_Debug D$:\Project\grid_watcher\src\sniffer.cpp || cmake_object_order_depends_target_grid_watcher
@@ -66,7 +66,7 @@ build CMakeFiles\grid_watcher.dir\src\sniffer.cpp.obj: CXX_COMPILER__grid_watche
   OBJECT_DIR = CMakeFiles\grid_watcher.dir
   OBJECT_FILE_DIR = CMakeFiles\grid_watcher.dir\src
   TARGET_COMPILE_PDB = CMakeFiles\grid_watcher.dir\
-  TARGET_PDB = grid_watcher.pdb
+  TARGET_PDB = D:\Project\grid_watcher\bin\grid_watcher.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\grid_watcher.dir
 
 build CMakeFiles\grid_watcher.dir\src\analyzer.cpp.obj: CXX_COMPILER__grid_watcher_unscanned_Debug D$:\Project\grid_watcher\src\analyzer.cpp || cmake_object_order_depends_target_grid_watcher
@@ -76,7 +76,7 @@ build CMakeFiles\grid_watcher.dir\src\analyzer.cpp.obj: CXX_COMPILER__grid_watch
   OBJECT_DIR = CMakeFiles\grid_watcher.dir
   OBJECT_FILE_DIR = CMakeFiles\grid_watcher.dir\src
   TARGET_COMPILE_PDB = CMakeFiles\grid_watcher.dir\
-  TARGET_PDB = grid_watcher.pdb
+  TARGET_PDB = D:\Project\grid_watcher\bin\grid_watcher.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\grid_watcher.dir
 
 build CMakeFiles\grid_watcher.dir\src\executor.cpp.obj: CXX_COMPILER__grid_watcher_unscanned_Debug D$:\Project\grid_watcher\src\executor.cpp || cmake_object_order_depends_target_grid_watcher
@@ -86,7 +86,17 @@ build CMakeFiles\grid_watcher.dir\src\executor.cpp.obj: CXX_COMPILER__grid_watch
   OBJECT_DIR = CMakeFiles\grid_watcher.dir
   OBJECT_FILE_DIR = CMakeFiles\grid_watcher.dir\src
   TARGET_COMPILE_PDB = CMakeFiles\grid_watcher.dir\
-  TARGET_PDB = grid_watcher.pdb
+  TARGET_PDB = D:\Project\grid_watcher\bin\grid_watcher.pdb
+  TARGET_SUPPORT_DIR = CMakeFiles\grid_watcher.dir
+
+build CMakeFiles\grid_watcher.dir\src\json_exporter.cpp.obj: CXX_COMPILER__grid_watcher_unscanned_Debug D$:\Project\grid_watcher\src\json_exporter.cpp || cmake_object_order_depends_target_grid_watcher
+  CONFIG = Debug
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -clang:-std=c++23 -MDd -Wall -Wextra -Wpedantic
+  INCLUDES = -ID:\Project\grid_watcher\include
+  OBJECT_DIR = CMakeFiles\grid_watcher.dir
+  OBJECT_FILE_DIR = CMakeFiles\grid_watcher.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\grid_watcher.dir\
+  TARGET_PDB = D:\Project\grid_watcher\bin\grid_watcher.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\grid_watcher.dir
 
 
@@ -95,9 +105,9 @@ build CMakeFiles\grid_watcher.dir\src\executor.cpp.obj: CXX_COMPILER__grid_watch
 
 
 #############################################
-# Link the executable grid_watcher.exe
+# Link the executable D:\Project\grid_watcher\bin\grid_watcher.exe
 
-build grid_watcher.exe: CXX_EXECUTABLE_LINKER__grid_watcher_Debug CMakeFiles\grid_watcher.dir\src\main.cpp.obj CMakeFiles\grid_watcher.dir\src\sniffer.cpp.obj CMakeFiles\grid_watcher.dir\src\analyzer.cpp.obj CMakeFiles\grid_watcher.dir\src\executor.cpp.obj
+build D$:\Project\grid_watcher\bin\grid_watcher.exe: CXX_EXECUTABLE_LINKER__grid_watcher_Debug CMakeFiles\grid_watcher.dir\src\main.cpp.obj CMakeFiles\grid_watcher.dir\src\sniffer.cpp.obj CMakeFiles\grid_watcher.dir\src\analyzer.cpp.obj CMakeFiles\grid_watcher.dir\src\executor.cpp.obj CMakeFiles\grid_watcher.dir\src\json_exporter.cpp.obj
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
@@ -106,9 +116,9 @@ build grid_watcher.exe: CXX_EXECUTABLE_LINKER__grid_watcher_Debug CMakeFiles\gri
   POST_BUILD = cd .
   PRE_LINK = cd .
   TARGET_COMPILE_PDB = CMakeFiles\grid_watcher.dir\
-  TARGET_FILE = grid_watcher.exe
+  TARGET_FILE = D:\Project\grid_watcher\bin\grid_watcher.exe
   TARGET_IMPLIB = grid_watcher.lib
-  TARGET_PDB = grid_watcher.pdb
+  TARGET_PDB = D:\Project\grid_watcher\bin\grid_watcher.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\grid_watcher.dir
 
 # =============================================================================
@@ -127,7 +137,7 @@ build CMakeFiles\attack_sim.dir\tests\attack_sim.cpp.obj: CXX_COMPILER__attack_s
   OBJECT_DIR = CMakeFiles\attack_sim.dir
   OBJECT_FILE_DIR = CMakeFiles\attack_sim.dir\tests
   TARGET_COMPILE_PDB = CMakeFiles\attack_sim.dir\
-  TARGET_PDB = attack_sim.pdb
+  TARGET_PDB = D:\Project\grid_watcher\bin\attack_sim.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\attack_sim.dir
 
 
@@ -136,9 +146,9 @@ build CMakeFiles\attack_sim.dir\tests\attack_sim.cpp.obj: CXX_COMPILER__attack_s
 
 
 #############################################
-# Link the executable attack_sim.exe
+# Link the executable D:\Project\grid_watcher\bin\attack_sim.exe
 
-build attack_sim.exe: CXX_EXECUTABLE_LINKER__attack_sim_Debug CMakeFiles\attack_sim.dir\tests\attack_sim.cpp.obj
+build D$:\Project\grid_watcher\bin\attack_sim.exe: CXX_EXECUTABLE_LINKER__attack_sim_Debug CMakeFiles\attack_sim.dir\tests\attack_sim.cpp.obj
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
@@ -147,9 +157,9 @@ build attack_sim.exe: CXX_EXECUTABLE_LINKER__attack_sim_Debug CMakeFiles\attack_
   POST_BUILD = cd .
   PRE_LINK = cd .
   TARGET_COMPILE_PDB = CMakeFiles\attack_sim.dir\
-  TARGET_FILE = attack_sim.exe
+  TARGET_FILE = D:\Project\grid_watcher\bin\attack_sim.exe
   TARGET_IMPLIB = attack_sim.lib
-  TARGET_PDB = attack_sim.pdb
+  TARGET_PDB = D:\Project\grid_watcher\bin\attack_sim.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\attack_sim.dir
 
 
@@ -179,9 +189,13 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build attack_sim: phony attack_sim.exe
+build attack_sim: phony D$:\Project\grid_watcher\bin\attack_sim.exe
 
-build grid_watcher: phony grid_watcher.exe
+build attack_sim.exe: phony D$:\Project\grid_watcher\bin\attack_sim.exe
+
+build grid_watcher: phony D$:\Project\grid_watcher\bin\grid_watcher.exe
+
+build grid_watcher.exe: phony D$:\Project\grid_watcher\bin\grid_watcher.exe
 
 # =============================================================================
 # Folder targets.
@@ -191,7 +205,7 @@ build grid_watcher: phony grid_watcher.exe
 #############################################
 # Folder: D:/Project/grid_watcher/build
 
-build all: phony grid_watcher.exe attack_sim.exe
+build all: phony D$:\Project\grid_watcher\bin\grid_watcher.exe D$:\Project\grid_watcher\bin\attack_sim.exe
 
 # =============================================================================
 # Built-in targets

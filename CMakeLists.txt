@@ -4,6 +4,7 @@ project(grid_watcher CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
 # Compiler warnings
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
@@ -19,6 +20,7 @@ add_executable(grid_watcher
     src/sniffer.cpp
     src/analyzer.cpp
     src/executor.cpp
+	src/json_exporter.cpp
 )
 
 # Platform-specific linking

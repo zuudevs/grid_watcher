@@ -25,6 +25,12 @@
 },
 {
   "directory": "D:/Project/grid_watcher/build",
+  "command": "D:\\dev-tools\\LLVM\\bin\\clang-cl.exe  /nologo -TP -ID:\\Project\\grid_watcher\\include /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -clang:-std=c++23 -MDd -Wall -Wextra -Wpedantic /FoCMakeFiles\\grid_watcher.dir\\src\\json_exporter.cpp.obj /FdCMakeFiles\\grid_watcher.dir\\ -c -- D:\\Project\\grid_watcher\\src\\json_exporter.cpp",
+  "file": "D:/Project/grid_watcher/src/json_exporter.cpp",
+  "output": "D:/Project/grid_watcher/build/CMakeFiles/grid_watcher.dir/src/json_exporter.cpp.obj"
+},
+{
+  "directory": "D:/Project/grid_watcher/build",
   "command": "D:\\dev-tools\\LLVM\\bin\\clang-cl.exe  /nologo -TP -ID:\\Project\\grid_watcher\\include /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -clang:-std=c++23 -MDd -Wall -Wextra -Wpedantic /FoCMakeFiles\\attack_sim.dir\\tests\\attack_sim.cpp.obj /FdCMakeFiles\\attack_sim.dir\\ -c -- D:\\Project\\grid_watcher\\tests\\attack_sim.cpp",
   "file": "D:/Project/grid_watcher/tests/attack_sim.cpp",
   "output": "D:/Project/grid_watcher/build/CMakeFiles/attack_sim.dir/tests/attack_sim.cpp.obj"
