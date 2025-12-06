@@ -20,10 +20,10 @@ endif()
 
 add_executable(grid_watcher
     src/main.cpp
-    src/sniffer.cpp
-    src/analyzer.cpp
-    src/executor.cpp
-	src/json_exporter.cpp
+    src/core/sniffer.cpp
+    src/core/analyzer.cpp
+    src/core/executor.cpp
+	src/util/json_exporter.cpp
 )
 
 # Include directories
