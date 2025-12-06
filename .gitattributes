@@ -1,0 +1,23 @@
+# Set default behavior:
+# Simpan di repo sebagai LF, tapi convert ke native OS saat checkout
+# (Jadi di Windows jadi CRLF, di Linux tetep LF)
+* text=auto
+
+# Paksa file script shell biar tetep LF (penting buat Linux!)
+*.sh text eol=lf
+
+# File Windows batch script harus CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# File binary jangan diapa-apain (PENTING!)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.dll binary
+*.exe binary
+*.lib binary
+*.so binary

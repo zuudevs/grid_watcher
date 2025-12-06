@@ -1,0 +1,9 @@
+1. open cmd as administator
+2. open directory "D:\Project\grid_watcher"
+3. run ".\bin\grid_watcher\exe"
+4. open cmd as administator
+5. open directory "D:\Project\grid_watcher\www"
+6. run "python -m http.server 8080"
+7. open cmd as administator
+8. open directory "D:\Project\grid_watcher\bin"
+9. run ".\attack_sim.exe"
