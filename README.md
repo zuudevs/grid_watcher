@@ -43,20 +43,23 @@ Grid Watcher is a lightweight, high-performance network security solution that p
 git clone https://github.com/zuudevs/grid_watcher.git
 cd grid_watcher
 
-# Build the project
+# Build the project (automatically generates run.sh/run.bat)
 cmake -S . -B build
 cmake --build build --config Release
 
-# Run (requires admin/root privileges)
-sudo ./bin/grid_watcher
+# Launch everything with one command!
+# Linux:
+./run.sh
+
+# Windows:
+run.bat
+
+# Or manually:
+sudo ./bin/grid_watcher  # IPS Engine
+cd www && python -m http.server 8080  # Dashboard
 ```
 
-**Dashboard Access:**
-```bash
-cd www
-python -m http.server 8080
-# Open http://localhost:8080 in browser
-```
+**Dashboard Access:** `http://localhost:8080`
 
 ---
 

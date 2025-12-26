@@ -23,6 +23,14 @@ This document provides an in-depth technical overview of Grid Watcher's architec
 
 Grid Watcher uses a **multi-threaded pipeline architecture** based on the Producer-Consumer pattern. This design ensures high throughput, low latency, and clean separation of concerns.
 
+### Build-Time Components
+
+**Launcher Script Generator (`scripts/init.cpp`):**
+- Automatically generates platform-specific run scripts during build
+- **Linux:** Creates `run.sh` with cleanup handlers and background dashboard
+- **Windows:** Creates `run.bat` with dual-window launch
+- Simplifies deployment and testing workflow
+
 ### System Architecture Diagram
 
 ```mermaid

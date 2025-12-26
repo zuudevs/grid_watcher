@@ -14,3 +14,11 @@ All notable changes to this project will be documented in this file.
 ### Security
 - Implemented thread-safe queue for packet processing.
 - Added raw socket restriction (Admin/Root required).
+
+## [1.0.1] - 2025-12-26
+### Refactor
+- Consolidated all headers into `gridwatcher.hpp`.
+
+### Added
+- Launcher Generation Script: automatically creates `run.sh` and `run.bat`.
+- Added comprehensive Doxygen-based documentation for all core components and utilities.

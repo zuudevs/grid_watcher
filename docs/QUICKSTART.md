@@ -360,7 +360,11 @@ void PacketAnalyzer::check_modbus_write(const std::vector<uint8_t>& packet) {
 
 ```bash
 cmake --build build
-sudo ./bin/grid_watcher
+# Script run.sh/run.bat automatically regenerated!
+
+# Launch with updated code
+./run.sh  # Linux
+run.bat   # Windows
 ```
 
 ### 3. Share Your Improvements

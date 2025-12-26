@@ -133,11 +133,29 @@ cd grid_watcher
 # Configure
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 
-# Build
+# Build (automatically generates run.sh/run.bat launcher)
 cmake --build build --config Release
 
 # Verify
 ./bin/grid_watcher --version
+```
+
+**✨ Auto-Generated Launcher:**  
+The build process automatically creates a platform-specific launcher script:
+- **Linux:** `run.sh` - Starts dashboard and IPS with sudo
+- **Windows:** `run.bat` - Launches both in separate console windows
+
+### Quick Launch (Recommended)
+
+```bash
+# After building, simply run:
+./run.sh       # Linux
+run.bat        # Windows
+
+# This automatically:
+# 1. Starts the web dashboard (port 8080)
+# 2. Launches the IPS engine
+# 3. Sets up cleanup handlers (Linux)
 ```
 
 ### Run
@@ -253,6 +271,65 @@ cmake --build build -j$(sysctl -n hw.ncpu)
 # Note: Raw socket capture requires root
 sudo ./bin/grid_watcher
 ```
+
+---
+
+## 🚀 Launcher Script Generation
+
+Grid Watcher automatically generates platform-specific launcher scripts during the build process.
+
+### How It Works
+
+1. **Build Time Generation:**
+   - CMake compiles `scripts/init.cpp` → `bin/launcher_gen`
+   - Post-build command automatically runs `launcher_gen`
+   - Generates `run.sh` (Linux) or `run.bat` (Windows) in project root
+
+2. **Generated Script Features:**
+
+**Linux (`run.sh`):**
+```bash
+#!/bin/bash
+# - Starts dashboard in background (port 8080)
+# - Requests sudo for IPS engine
+# - Sets up cleanup handlers (Ctrl+C)
+# - Automatically set as executable (+x)
+```
+
+**Windows (`run.bat`):**
+```batch
+@echo off
+REM - Launches dashboard in new CMD window
+REM - Launches IPS in new CMD window (Admin required)
+REM - Both run independently
+```
+
+### Manual Regeneration
+
+If you accidentally delete the launcher script:
+
+```bash
+# Regenerate manually
+./bin/launcher_gen
+
+# Or rebuild
+cmake --build build
+```
+
+### Customizing the Launcher
+
+To modify the generated scripts, edit `scripts/init.cpp` and rebuild:
+
+```cpp
+// scripts/init.cpp
+// Modify the raw string literals for custom behavior
+run_file << R"(
+#!/bin/bash
+# Your custom launcher logic here
+)";
+```
+
+**Note:** Changes require rebuilding the `launcher_gen` executable.
 
 ---
 
@@ -415,6 +492,50 @@ cmake --build build --clean-first
 ```bash
 # GCC requires explicit linking
 cmake -S . -B build -DCMAKE_CXX_FLAGS="-lfmt"
+```
+
+#### 6. Launcher script not found
+
+**Cause:** `launcher_gen` not executed during build
+
+**Solution:**
+```bash
+# Rebuild with verbose output
+cmake --build build --verbose
+
+# Or manually generate
+./bin/launcher_gen
+
+# Verify script exists
+ls -la run.sh  # Linux
+dir run.bat    # Windows
+```
+
+#### 7. "Permission denied" when running run.sh
+
+**Cause:** Script not executable (Linux)
+
+**Solution:**
+```bash
+# Make executable
+chmod +x run.sh
+
+# Or regenerate (automatically sets +x)
+./bin/launcher_gen
+```
+
+#### 8. Dashboard fails to start (Port 8080 in use)
+
+**Cause:** Another service using port 8080
+
+**Solution:**
+```bash
+# Find process using port
+lsof -i :8080  # Linux
+netstat -ano | findstr :8080  # Windows
+
+# Kill process or edit run.sh/run.bat to use different port
+# Example: python -m http.server 8888
 ```
 
 ### Build System Issues

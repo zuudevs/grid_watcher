@@ -48,10 +48,16 @@ cd grid_watcher
 # Add upstream remote
 git remote add upstream https://github.com/zuudevs/grid_watcher.git
 
-# Create a development build
+# Create a development build (generates launcher script)
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
 cmake --build build
+
+# Quick launch for testing
+./run.sh       # Linux
+run.bat        # Windows
 ```
+
+**Note:** The build process automatically generates `run.sh`/`run.bat` for convenient testing.
 
 ---
 

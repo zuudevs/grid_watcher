@@ -446,6 +446,99 @@ exporter.write();  // Atomic file write
 
 ---
 
+## 🚀 Launcher Script Generation
+
+### Script: `launcher_gen`
+
+**Location:** `scripts/init.cpp`  
+**Purpose:** Generates platform-specific launcher scripts at build time
+
+### Function: `generate_run_file()`
+
+Detects the operating system and creates the appropriate runner script.
+
+**Platforms:**
+- **Windows:** Creates `run.bat` in project root
+- **Linux:** Creates `run.sh` with executable permissions
+
+#### Windows Script Template
+
+```batch
+@echo off
+title Grid Watcher Launcher
+
+REM Check binary existence
+if not exist "bin\grid_watcher.exe" (
+    echo [Error] Binary not found!
+    pause
+    exit /b
+)
+
+REM Launch dashboard in new window
+start "GW Dashboard" cmd /k "cd www && python -m http.server 8080"
+
+REM Launch IPS in new window (requires Admin)
+start "GW IPS Engine" cmd /k "bin\grid_watcher.exe"
+```
+
+#### Linux Script Template
+
+```bash
+#!/bin/bash
+
+# Cleanup handler for Ctrl+C
+cleanup() {
+    echo -e "\n[Info] Shutting down..."
+    kill $(jobs -p) 2>/dev/null
+    exit
+}
+trap cleanup SIGINT SIGTERM
+
+# Check binary
+if [ ! -f "./bin/grid_watcher" ]; then
+    echo "[Error] Binary not found!"
+    exit 1
+fi
+
+# Start dashboard (background)
+(cd www && python3 -m http.server 8080) > /dev/null 2>&1 &
+
+# Start IPS (requires sudo)
+sudo ./bin/grid_watcher
+```
+
+### Customization Example
+
+To add custom pre-launch checks:
+
+```cpp
+// scripts/init.cpp
+run_file << R"(
+#!/bin/bash
+
+# Custom: Check Python version
+if ! command -v python3 &> /dev/null; then
+    echo "[Error] Python 3 is required!"
+    exit 1
+fi
+
+# Custom: Verify network interface
+if ! ip link show eth0 &> /dev/null; then
+    echo "[Warning] eth0 not found. Using default interface."
+fi
+
+# Original launcher logic...
+)";
+```
+
+**Rebuild Required:**
+```bash
+cmake --build build --target launcher_gen
+./bin/launcher_gen
+```
+
+---
+
 ## 📊 Data Structures
 
 ### `ActionEvent`
