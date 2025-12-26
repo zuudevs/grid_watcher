@@ -26,9 +26,9 @@ namespace fs = std::filesystem;
 void generate_run_file() {
     // Determine filename based on OS
     #ifdef _WIN32
-        std::string filename = "../run.bat"; 
+        std::string filename = "run.bat"; 
     #else
-        std::string filename = "../run.sh";
+        std::string filename = "run.sh";
     #endif
 
     std::ofstream run_file(filename);
