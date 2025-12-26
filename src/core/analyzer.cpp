@@ -1,7 +1,7 @@
 /**
  * @file src/analyzer.cpp
  * @author zuudevs (zuudevs@gmail.com)
- * @brief 
+ * @brief Implementation of the PacketAnalyzer class for inspecting network traffic and detecting security threats.
  * @version 1.0
  * @date 2025-12-05
  * 

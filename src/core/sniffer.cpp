@@ -1,7 +1,7 @@
 /**
  * @file src/sniffer.cpp
  * @author zuudevs (zuudevs@gmail.com)
- * @brief 
+ * @brief Implementation of the PacketSniffer class for capturing raw network traffic.
  * @version 1.0
  * @date 2025-12-05
  * 

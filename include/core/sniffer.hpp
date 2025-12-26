@@ -1,15 +1,15 @@
-#pragma once
-
 /**
  * @file core/sniffer.hpp
  * @author zuudevs (zuudevs@gmail.com)
- * @brief 
- * @version 1.0
+ * @brief Defines the PacketSniffer class for capturing raw network traffic.
+ * @version 1.0.0
  * @date 2025-12-05
  * 
  * @copyright Copyright (c) 2025
  * 
  */
+
+#pragma once
 
 #include <vector>
 #include <cstdint>

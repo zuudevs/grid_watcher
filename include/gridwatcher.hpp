@@ -1,7 +1,7 @@
 /**
  * @file gridwatcher.hpp
  * @author zuudevs (zuudevs@gmail.com)
- * @brief 
+ * @brief Central header file aggregating core components and defining project metadata.
  * @version 1.0.0
  * @date 2025-12-26
  * 

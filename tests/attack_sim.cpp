@@ -1,7 +1,7 @@
 /**
  * @file attack_sim.cpp
  * @author zuudevs (zuudevs@gmail.com)
- * @brief 
+ * @brief Network attack simulator for testing Grid Watcher IPS detection capabilities.
  * @version 1.0
  * @date 2025-12-05
  * 
@@ -29,6 +29,14 @@
     #define closesocket close
 #endif
 
+/**
+ * @brief Simulates a TCP SYN flood attack to trigger port scan detection.
+ * 
+ * Sends multiple TCP SYN packets to sequential ports on the target IP
+ * to mimic a port scanning tool like Nmap.
+ * 
+ * @param target_ip The IP address of the target system.
+ */
 void send_syn_flood(const std::string& target_ip) {
 #ifdef _WIN32
     WSADATA wsa;
@@ -64,6 +72,14 @@ void send_syn_flood(const std::string& target_ip) {
 #endif
 }
 
+/**
+ * @brief Simulates an unauthorized Modbus TCP write attempt.
+ * 
+ * Connects to port 502 and sends a Modbus "Write Single Register" (0x06) command,
+ * which should be flagged by the IPS as a critical SCADA threat.
+ * 
+ * @param target_ip The IP address of the target system.
+ */
 void send_modbus_write_attempt(const std::string& target_ip) {
     std::cout << "[SIM] Simulating Modbus write to " << target_ip << ":502\n";
     std::cout << "[SIM] (Note: Actual Modbus requires full protocol implementation)\n";
@@ -102,6 +118,16 @@ void send_modbus_write_attempt(const std::string& target_ip) {
 #endif
 }
 
+/**
+ * @brief Main entry point for the attack simulator.
+ * 
+ * Orchestrates a sequence of simulated attacks (Port Scan followed by Modbus Write)
+ * against a specified target to verify IPS response.
+ * 
+ * @param argc Argument count.
+ * @param argv Argument vector (optional: target IP as first argument).
+ * @return int Exit status code.
+ */
 int main(int argc, char* argv[]) {
     std::string target = "127.0.0.1";
     if(argc > 1) target = argv[1];

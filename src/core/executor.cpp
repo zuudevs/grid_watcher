@@ -1,7 +1,7 @@
 /**
  * @file src/executor.cpp
  * @author zuudevs (zuudevs@gmail.com)
- * @brief 
+ * @brief Implementation of the ActionExecutor class for enforcing security policies and mitigation actions.
  * @version 1.0
  * @date 2025-12-05
  * 

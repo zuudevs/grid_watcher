@@ -1,15 +1,15 @@
-#pragma once
-
 /**
  * @file core/executor.hpp
  * @author zuudevs (zuudevs@gmail.com)
- * @brief 
- * @version 1.0
+ * @brief Defines the ActionExecutor class for enforcing security policies and mitigation actions.
+ * @version 1.0.0
  * @date 2025-12-05
  * 
  * @copyright Copyright (c) 2025
  * 
  */
+
+#pragma once
 
 #include "util/ts_queue.hpp"
 #include "util/json_exporter.hpp"

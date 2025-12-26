@@ -1,15 +1,15 @@
-#pragma once
-
 /**
  * @file core/analyzer.hpp
  * @author zuudevs (zuudevs@domain.com)
  * @brief Defines the PacketAnalyzer class for network traffic inspection and threat detection.
- * @version 1.0
+ * @version 1.0.0
  * @date 2025-12-05
  * 
  * @copyright Copyright (c) 2025
  * 
  */
+
+#pragma once
 
 #include <string>
 #include <unordered_map>
