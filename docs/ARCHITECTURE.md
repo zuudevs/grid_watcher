@@ -172,8 +172,8 @@ flowchart TD
     Start([Packet Received])
     CheckPort{Dst Port<br/>== 502?}
     CheckProto{Protocol<br/>== TCP?}
-    ExtractFC[Extract Function Code<br/>MBAP[7]]
-    CheckFC{FC == 0x05<br/>|| 0x06<br/>|| 0x10?}
+    ExtractFC["Extract Function Code<br/>MBAP byte 7"]
+    CheckFC{"FC == 0x05<br/>OR 0x06<br/>OR 0x10?"}
     Block[Generate BLOCK_IP Action]
     Pass[Pass Through]
     
