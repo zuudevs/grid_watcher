@@ -1,29 +1,45 @@
 /**
  * @file src/main.cpp
  * @author zuudevs (zuudevs@gmail.com)
- * @brief 
- * @version 1.0
+ * @brief Main entry point for the Grid Watcher SCADA Intrusion Prevention System.
+ * @version 1.0.0
  * @date 2025-12-05
  * 
  * @copyright Copyright (c) 2025
  * 
  */
 
-#include "core/sniffer.hpp"
-#include "core/analyzer.hpp"
-#include "core/executor.hpp"
-#include "util/logger.hpp"
+#include "gridwatcher.hpp"
 #include <thread>
 #include <csignal>
 #include <atomic>
 
+/**
+ * @brief Global atomic flag to control the application main loop.
+ * 
+ * This flag is set to true when a termination signal is received, 
+ * triggering a graceful shutdown of all worker threads.
+ */
 std::atomic<bool> g_shutdown{false};
 
+/**
+ * @brief Handles system signals (SIGINT, SIGTERM) for graceful termination.
+ * 
+ * @param signal The signal number received (unused in implementation).
+ */
 void signal_handler(int) {
     Logger::info("Shutdown signal received");
     g_shutdown = true;
 }
 
+/**
+ * @brief Application entry point.
+ * 
+ * Initializes the IPS pipeline components (Sniffer, Analyzer, Executor),
+ * launches worker threads, and monitors the shutdown flag.
+ * 
+ * @return int Exit status code (0 for success).
+ */
 int main() {
     std::signal(SIGINT, signal_handler);
     std::signal(SIGTERM, signal_handler);

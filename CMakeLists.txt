@@ -43,4 +43,31 @@ add_executable(attack_sim tests/attack_sim.cpp)
 
 if(WIN32)
     target_link_libraries(attack_sim ws2_32)
+else()
+    target_link_libraries(grid_watcher pthread)
+endif()
+
+# Initial script generation
+add_executable(launcher_gen scripts/init.cpp)
+
+add_custom_command(TARGET launcher_gen POST_BUILD
+    COMMAND launcher_gen
+    WORKING_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
+    COMMENT "[Info] Generating auto-run script (run.bat/run.sh)..."
+)
+
+if(WIN32)
+    add_custom_target(run
+        COMMAND cmd /c "${CMAKE_SOURCE_DIR}/run.bat"
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        DEPENDS grid_watcher launcher_gen
+        COMMENT "[Info] Launching System..."
+    )
+else()
+    add_custom_target(run
+        COMMAND "${CMAKE_SOURCE_DIR}/run.sh"
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        DEPENDS grid_watcher launcher_gen
+        COMMENT "[Info] Launching System..."
+    )
 endif()

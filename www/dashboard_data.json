@@ -1,17 +1,17 @@
 {
-  "system_status": "STOPPED",
+  "system_status": "RUNNING",
   "total_blocked": 1,
   "total_threats": 1,
   "packets_analyzed": 0,
-  "uptime_seconds": 1109,
+  "uptime_seconds": 36,
   "latest_alert": {
     "type": "PORT_SCAN",
     "src_ip": "127.0.0.1",
     "reason": "Port scanning activity",
-    "timestamp": "2025-12-06 13:57:05"
+    "timestamp": "2025-12-26 15:10:13"
   },
   "blocked_list": [
     "127.0.0.1"
   ],
-  "last_update": "2025-12-06 14:13:29"
+  "last_update": "2025-12-26 15:10:13"
 }

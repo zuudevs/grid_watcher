@@ -3,7 +3,7 @@
 /**
  * @file core/analyzer.hpp
  * @author zuudevs (zuudevs@domain.com)
- * @brief 
+ * @brief Defines the PacketAnalyzer class for network traffic inspection and threat detection.
  * @version 1.0
  * @date 2025-12-05
  * 
