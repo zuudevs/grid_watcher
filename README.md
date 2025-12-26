@@ -5,6 +5,7 @@
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
 [![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Windows-lightgrey.svg)]()
 [![SCADA](https://img.shields.io/badge/SCADA-Modbus%20TCP-orange.svg)]()
+[![GitHub Repo stars](https://img.shields.io/github/stars/USERNAME/REPO?style=social)](https://github.com/USERNAME/REPO)
 
 > **Modern C++23 Intrusion Prevention System designed specifically for SCADA infrastructure protection**
 
