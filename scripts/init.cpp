@@ -46,7 +46,7 @@ void generate_run_file() {
 title Grid Watcher Launcher
 
 REM 1. Check Binary Existence
-if not exist "bin\grid_watcher.exe" (
+if not exist "grid_watcher.exe" (
     echo [Error] File bin/grid_watcher.exe not found! Please build first!
     pause
     exit /b
@@ -58,7 +58,7 @@ REM 2. Launch Dashboard in a new window
 start "GW Dashboard" cmd /k "cd www && python -m http.server 8080"
 
 REM 3. Launch IPS Engine in a new window (Requires Administrator privileges)
-start "GW IPS Engine" cmd /k "bin\grid_watcher.exe"
+start "GW IPS Engine" cmd /k "grid_watcher.exe"
 
 echo [Info] All systems are running!
 echo [Info] Please check the newly opened windows.
